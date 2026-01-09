@@ -3,9 +3,9 @@ import { useState } from "react";
 const Bookshelf = () => {
   const [books, setBooks] = useState([]); //array
   const [newBook, setNewBook] = useState({
+    author: "",
     //object
     title: "",
-    author: "",
   });
   console.log(books);
   const handleInputChange = (event) => {
@@ -23,6 +23,10 @@ const Bookshelf = () => {
     const copyBooks = [...books, newBook]; // copy of the books and it is adding the new book
 
     setBooks(copyBooks); //update the set of books
+    setNewBook({
+    author: "",
+    title: "",
+  })
   };
   return (
     <div className="bookshelfDiv">
